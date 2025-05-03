@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "migrate:video-go": "cd backend/video-go && go run database/cmd/migrate/main.go",
+        "drop-migrate:video-go": "cd backend/video-go && go run database/cmd/drop-migrate/main.go"
+    }
+}
