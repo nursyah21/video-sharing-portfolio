@@ -16,4 +16,11 @@ func SetupRoutes(router *gin.Engine) {
 		api.PUT("/videos/:id", h.UpdateVideo)
 		api.DELETE("/videos/:id", h.DeleteVideo)
 	}
+
+	// health check
+	api.GET("/health", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"status": "ok",
+		})
+	})
 }

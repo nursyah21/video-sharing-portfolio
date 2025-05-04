@@ -58,7 +58,15 @@ func (h *Handler) GetVideos(c *gin.Context) {
 	}
 
 	var videos []models.Video
-	h.DB.Find(&videos)
+
+	// just for benchmark raw speed vs orm
+	raw := c.Query("raw")
+	if raw == "1" {
+		h.DB.Raw("SELECT * FROM videos").Scan(&videos)
+	} else {
+		h.DB.Find(&videos)
+	}
+
 	c.JSON(http.StatusOK, videos)
 }
 

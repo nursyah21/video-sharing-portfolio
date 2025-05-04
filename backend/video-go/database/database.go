@@ -14,7 +14,7 @@ var Db *gorm.DB
 func ConnectDB() {
 	dsn := os.Getenv("DATABASE_URL")
 	if dsn == "" {
-		dsn = "host=localhost user=myuser password=mypassword dbname=video port=5432 sslmode=disable"
+		dsn = "postgresql://myuser:mypassword@localhost:5432/video_sharing"
 	}
 
 	var err error
@@ -24,6 +24,15 @@ func ConnectDB() {
 	}
 
 	log.Println("Connected to database")
+
+	migrate := os.Getenv("MIGRATE")
+	if migrate == "auto" {
+		Migrate()
+	}
+	if migrate == "drop" {
+		Drop()
+		Migrate()
+	}
 }
 
 func Drop() {
