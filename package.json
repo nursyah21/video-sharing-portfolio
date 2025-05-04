@@ -2,10 +2,12 @@
     "scripts": {
         "migrate:video-go": "cd backend/video-go && go run database/cmd/migrate/main.go",
         "migrate:drop:video-go": "cd backend/video-go && go run database/cmd/drop-migrate/main.go",
-        "benchmark:video-go-db": "bombardier -d 10s -c 300 http://localhost:8081/api/v1/videos",
-        "benchmark:video-go-db-raw": "bombardier -d 10s -c 300 http://localhost:8081/api/v1/videos?raw=1",
-        "benchmark:video-go-health": "bombardier -d 10s -c 300 http://localhost:8081/api/v1/health",
-        "benchmark:auth-java-health": "bombardier -d 10s -c 300 http://localhost:8082/api/v1/health",
-        "benchmark:frontend": "bombardier -d 10s -c 300 http://localhost:3002"
+        "benchmark:video-go-db": "bombardier -d 60s -c 300 http://localhost:8081/api/v1/videos",
+        "benchmark:video-go-db-raw": "bombardier -d 60s -c 300 http://localhost:8081/api/v1/videos?raw=1",
+        "benchmark:video-go-health": "bombardier -d 60s -c 300 http://localhost:8081/api/v1/health",
+        "benchmark:auth-java-health": "bombardier -d 60s -c 300 http://localhost:8082/api/v1/health",
+        "benchmark:stream-py-health": "bombardier -d 60s -c 300 http://localhost:8083/api/v1/health",
+        "benchmark:frontend": "bombardier -d 60s -c 300 http://localhost:3002",
+        "benchmark:health-all": "npm run benchmark:video-go-health && npm run benchmark:auth-java-health && npm run benchmark:stream-py-health"
     }
 }

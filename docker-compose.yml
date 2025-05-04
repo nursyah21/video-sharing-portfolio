@@ -51,5 +51,15 @@ services:
       postgres:
         condition: service_healthy
 
+  stream-services:
+    build:
+      context: ./backend/stream-py
+    ports:
+      - 8083:8000
+    depends_on:
+      postgres:
+        condition: service_healthy
+    
+
 volumes:
   pgdata:
