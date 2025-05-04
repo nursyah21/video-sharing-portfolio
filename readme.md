@@ -13,15 +13,16 @@ Frameworks used for this test:
 - Java with Spring Boot
 - Python with FastAPI
 
-| Language | Reqs/sec | Latency (ms) | Total |
-| Golang   | 2658.11  | 124.93       | 36094 |
-| Java     | 776.98   | 406.33       | 11225 |
-| Python   | 174.02   | 1970.00      | 2398  |
+| Language | Reqs/sec | Latency (ms) | Total  |
+|----------|----------|--------------|--------|
+| Golang   | 2658.11  | 124.93       | 36094  |
+| Java     | 776.98   | 406.33       | 11225  |
+| Python   | 174.02   | 1970.00      | 2398   |
 
 ## Conclusion
 
 Based on my experience developing with these three languages and benchmarking them, here is my conclusion:
 
-Golang : Speed and scalibity
-Java   : Enterprise robustness and vast ecosytem
-Python : Simplicity and rapid development
+- Golang : Speed and scalibity
+- Java   : Enterprise robustness and vast ecosytem
+- Python : Simplicity and rapid development
