@@ -1,5 +1,5 @@
 {
-  "projectName": "yt-p2p",
+  "projectName": ".",
   "mode": "file-router",
   "typescript": true,
   "tailwind": true,
@@ -8,9 +8,6 @@
   "version": 1,
   "framework": "react-cra",
   "chosenAddOns": [
-    "eslint",
-    "tanstack-query",
-    "store",
-    "shadcn"
+    "eslint"
   ]
 }
